@@ -1,0 +1,36 @@
+buildscript {
+	ext {
+		author : 'César Araya'
+	}
+
+	repositories {
+		mavenCentral()
+	}
+}
+
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+version = "1.0.0"
+
+mainClassName = 'cl.poc.caraya.Main'
+
+jar {
+	manifest {
+		attributes 'Main-Class' : mainClassName
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
+	
+}
